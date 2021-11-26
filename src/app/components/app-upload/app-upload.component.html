@@ -23,7 +23,7 @@
           <div class="row">
             <div class="col-md-6">
               <img id="placeholder1" [src]="defaulImgUrl" alt="" (click)="appUploader.click()">
-              <input multiple #appUploader id="appUploader" type="file" formControlName='file'> 
+              <input multiple #appUploader id="appUploader" type="file" (change)="getFileName($event)"> 
             </div>
             <div class="col-md-6">
     
