@@ -21,9 +21,14 @@
     
         <div class="container">
           <div class="row">
-            <div class="col-md-6">
-              <img id="placeholder1" [src]="defaulImgUrl" alt="" (click)="appUploader.click()">
-              <input multiple #appUploader id="appUploader" type="file" (change)="getFileName($event)"> 
+            <div class="col-md-3 border text-center">
+              <img class="placeholders" [src]="defaulImgUrl" alt="" (click)="appUploader.click()">
+              <input hidden multiple #appUploader id="appUploader" type="file" (change)="getFileName($event)"> 
+              <p>{{fileStatus}}</p>
+            </div>
+            <div class="col-md-3 border text-center">
+              <img class="placeholders" [src]="defaultThumbnailUrl" alt="" (click)="thumbnailUploader.click()">
+              <input hidden multiple #thumbnailUploader id="appUploader" type="file" (change)="getThumbnailName($event)"> 
             </div>
             <div class="col-md-6">
     
