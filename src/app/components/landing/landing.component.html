@@ -1,5 +1,6 @@
 <p>landing works!</p>
 <div *ngFor="let i of data">   
+    <img [src]="i.thumbnailUrl" alt="">
     <button  class="btn btn-primary m-2" (click)="download(i)">Download</button>
     
 </div>

@@ -29,6 +29,8 @@
             <div class="col-md-3 border text-center">
               <img class="placeholders" [src]="defaultThumbnailUrl" alt="" (click)="thumbnailUploader.click()">
               <input hidden multiple #thumbnailUploader id="appUploader" type="file" (change)="getThumbnailName($event)"> 
+              <p>{{imageStatus}}</p>
+              
             </div>
             <div class="col-md-6">
     

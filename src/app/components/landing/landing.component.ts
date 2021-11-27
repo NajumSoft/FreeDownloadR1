@@ -18,6 +18,8 @@ export class LandingComponent implements OnInit {
   }
   download(i:any){
     console.log(i.downloadPath);
+    //window.open(i.downloadPath);
+    window.open(i.downloadPath);
     
 
   }

@@ -1,5 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { ThrowStmt } from '@angular/compiler';
+import { HttpClient, HttpEventType } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -15,6 +14,7 @@ export class AppUploadComponent implements OnInit {
   prograssBar = 0;
   appUpoadForm:any ;
   fileStatus:string = 'Empty'
+  imageStatus:string = 'Empty'
   baseUrl = 'http://localhost/MyProj/freedownloadr1/'
   constructor(private fb: FormBuilder,private _http:HttpClient) { }
 
@@ -48,15 +48,25 @@ export class AppUploadComponent implements OnInit {
      formData.append('appName',this.appUpoadForm.value.appName);
      formData.append('file',this.appUpoadForm.value.file);
      formData.append('thumbnail',this.appUpoadForm.value.thumbnail);
-     this._http.post(this.baseUrl+'takeApp.php',formData).subscribe(d=>console.log(d));
+     this._http.post(this.baseUrl+'takeApp.php',formData,{
+      reportProgress: true,
+      observe: 'events'
+    }).subscribe(event=>{
+      if (event.type === HttpEventType.UploadProgress) {
+        this.prograssBar = Math.round(100 * event.loaded / event.total);
+        }else if(event.type==HttpEventType.Response){
+        console.log(event.body)
+      }
+
+      // this.prograssBar = (25* events.type);
+      // console.log(events.loaded); 
+    
+    });
+    
      const i = formData;
      console.log(i);
     }
   getFileName(e:any){
-    //console.log(e.target.files[0].name);
-    //this.appUpoadForm.patchValue({fileName :e.target.files[0].name});
-    //this.appUpoadForm.append();
-   // this.appUpoadForm.get('filePath').setValue(e.target.files[0]);
     this.appUpoadForm.patchValue({file :e.target.files[0]});
     console.log(this.appUpoadForm.value);
     if(e.target.files[0])
@@ -66,17 +76,13 @@ export class AppUploadComponent implements OnInit {
     else this.fileStatus= 'Empty'
   }
   getThumbnailName(e:any){
-    //console.log(e.target.files[0].name);
-    //this.appUpoadForm.patchValue({fileName :e.target.files[0].name});
-    //this.appUpoadForm.append();
-   // this.appUpoadForm.get('filePath').setValue(e.target.files[0]);
     this.appUpoadForm.patchValue({thumbnail :e.target.files[0]});
     console.log(this.appUpoadForm.value);
     if(e.target.files[0])
     {
-     this.fileStatus  = 'file Loaded'
+     this.imageStatus  = 'Image Loaded'
     }
-    else this.fileStatus= 'Empty'
+    else this.imageStatus= 'Empty'
   }
   fileUploaderFunc(e:any){}
 }
