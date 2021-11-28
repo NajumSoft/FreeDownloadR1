@@ -1,3 +1,51 @@
 .placeholders{
     width: 100px;
 }
+
+.droper{
+    width: 150px;
+    height: 150px;
+    border: 2px dashed #e1e1e1;
+    border-radius: 10px;
+    transition: all .3s;
+    padding: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+    overflow: hidden;
+
+}
+
+.droper::before{
+  position: absolute;
+  content: 'Thumbnail';
+  background-color: rgb(117, 27, 27);
+  color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 5px;
+
+  margin-top: -15px;
+  margin-right: -20px;
+}
+.droperFile::before{
+    position: absolute;
+    content: 'File';
+    background-color: rgb(117, 27, 27);
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+  
+    margin-top: -15px;
+    margin-right: -20px;
+  }
+.droper:hover{
+border-color: rgb(0, 174, 255);
+cursor:pointer;
+  }
+  .droper img{
+    width: 100%;
+    height: 100%;
+
+
+}

@@ -1,5 +1,43 @@
 
+<!-- container start -->
+<div class="container">
 
+
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6"></div>
+    <div class="col-md-6"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-12"></div>
+  </div>
+<div class="row">
+  <div class="col-md-12 d-flex justify-content-center">
+
+    <div class="droper droperFile" (click)="file.click()">
+      <img [src]="defaulFileUrl" alt="">
+    </div>
+    <input #file hidden type="file" (change)="readFile($event)">
+
+    <div class="droper" (click)="thumbnail.click()">
+      <img [src]="defaultThumbnailUrl" alt="">
+    </div>
+    <input #thumbnail hidden type="file" (change)="readThumbnail($event)">
+  </div>
+</div>
+<!-- image Drop Zone End -->
+
+
+
+</div>
+<!-- container End -->
 
 
 
@@ -22,7 +60,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3 border text-center">
-              <img class="placeholders" [src]="defaulImgUrl" alt="" (click)="appUploader.click()">
+              <img class="placeholders" [src]="defaulFileUrl" alt="" (click)="appUploader.click()">
               <input hidden multiple #appUploader id="appUploader" type="file" (change)="getFileName($event)"> 
               <p>{{fileStatus}}</p>
             </div>

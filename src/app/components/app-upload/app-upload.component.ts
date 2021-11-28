@@ -8,13 +8,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app-upload.component.scss']
 })
 export class AppUploadComponent implements OnInit {
-  defaulImgUrl: string = "https://resources.ncelp.org/assets/default-f936e9c3ea7a38e2c2092099586a71380b11258697b37fb4df376704495a849a.png";
+  defaulFileUrl: string = "https://resources.ncelp.org/assets/default-f936e9c3ea7a38e2c2092099586a71380b11258697b37fb4df376704495a849a.png";
   defaultThumbnailUrl :string = "https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-gray-network-placeholder-png-image_3416659.jpg";
 
   prograssBar = 0;
   appUpoadForm:any ;
-  fileStatus:string = 'Empty'
-  imageStatus:string = 'Empty'
+  fileStatus:string = 'Drag App Here..'
+  imageStatus:string = 'Drag Thumbnail Here..'
   baseUrl = 'http://localhost/MyProj/freedownloadr1/'
   constructor(private fb: FormBuilder,private _http:HttpClient) { }
 
@@ -84,5 +84,20 @@ export class AppUploadComponent implements OnInit {
     }
     else this.imageStatus= 'Empty'
   }
-  fileUploaderFunc(e:any){}
+
+
+  readThumbnail(event){
+    var reader = new FileReader();
+
+    reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+    reader.onload = (e:any) => { // called once readAsDataURL is completed
+      this.defaultThumbnailUrl = e.target.result;
+    }
+  }
+  readFile(e){
+     console.log(e.target.files[0]);
+  }
+
+
 }
