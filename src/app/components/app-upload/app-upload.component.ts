@@ -13,9 +13,9 @@ export class AppUploadComponent implements OnInit {
 
   prograssBar = 0;
   appUpoadForm:any ;
-  fileStatus:string = 'Drag App Here..'
-  imageStatus:string = 'Drag Thumbnail Here..'
-  baseUrl = 'http://localhost/MyProj/freedownloadr1/'
+  fileStatus:string = 'Drag App Here..';
+  imageStatus:string = 'Drag Thumbnail Here..';
+  baseUrl = 'http://localhost/MyProj/freedownloadr1/';
   constructor(private fb: FormBuilder,private _http:HttpClient) { }
 
   ngOnInit(): void {
@@ -46,6 +46,12 @@ export class AppUploadComponent implements OnInit {
      console.log(this.appUpoadForm);
      const formData = new FormData();
      formData.append('appName',this.appUpoadForm.value.appName);
+     formData.append('by',this.appUpoadForm.value.by);
+     formData.append('version',this.appUpoadForm.value.version);
+     formData.append('operatingSystem',this.appUpoadForm.value.operatingSystem);
+     formData.append('license',this.appUpoadForm.value.license);
+     formData.append('categories',this.appUpoadForm.value.categories);
+     formData.append('descriptions',this.appUpoadForm.value.descriptions);
      formData.append('file',this.appUpoadForm.value.file);
      formData.append('thumbnail',this.appUpoadForm.value.thumbnail);
      this._http.post(this.baseUrl+'takeApp.php',formData,{
@@ -81,6 +87,7 @@ export class AppUploadComponent implements OnInit {
     if(e.target.files[0])
     {
      this.imageStatus  = 'Image Loaded'
+     console.log(this.appUpoadForm.value);
     }
     else this.imageStatus= 'Empty'
   }

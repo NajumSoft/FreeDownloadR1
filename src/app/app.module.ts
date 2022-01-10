@@ -20,13 +20,19 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import { AdminTableComponent } from './components/admin-table/admin-table.component';
+import { AppView1Component } from './components/app-view1/app-view1.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    AppUploadComponent
+    AppUploadComponent,
+    AdminTableComponent,
+    AppView1Component
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -43,7 +49,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatProgressBarModule,
     MatDatepickerModule,
     MatDialogModule,
-    MatSelectModule
+    MatSelectModule,
+    FontAwesomeModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

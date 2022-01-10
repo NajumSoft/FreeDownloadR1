@@ -1,13 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { SwiperComponent } from "swiper/angular";
+import SwiperCore, { EffectCoverflow, Pagination } from "swiper";
+SwiperCore.use([EffectCoverflow, Pagination]);
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.scss']
+  styleUrls: ['./landing.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class LandingComponent implements OnInit {
+  faStar = faStar;
   fileStatus:string = 'Empty';
  data:any ;
   constructor(private _http:HttpClient,private _route:Router) { }
@@ -22,5 +27,8 @@ export class LandingComponent implements OnInit {
     window.open(i.downloadPath);
     
 
+  }
+  hello(){
+    console.log('hello');
   }
 }

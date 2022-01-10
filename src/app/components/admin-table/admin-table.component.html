@@ -1,0 +1,38 @@
+<div class="container">
+    <table class="table table-hover table-bordered">
+        <thead> 
+            <tr>
+                <th>Id</th>
+                <th>AppName</th>
+                <th>Size</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th>DownloadPath</th>
+                <th>Version</th>
+                <th>OwnerName</th>
+                <th>Thumbnail</th>
+                <th>
+                 
+                </th>
+                <th>
+                 
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of data">
+                <td>{{i.id}}</td>
+                <td>{{i.appName}}</td>
+                <td>{{i.appSize}}</td>
+                <td>{{i.categoryId}}</td>
+                <td>{{i.descriptions}}</td>
+                <td>{{i.downloadPath}}</td>
+                <td>{{i.version}}</td>
+                <td>{{i.OwnerLink}}</td>
+                <td><img [src]="i.thumbnailUrl" alt=""></td>
+                <td>   <i class="fa fa-trash-alt"></i></td>
+                <td>  <i class="fa fa-pencil"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

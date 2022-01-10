@@ -1,0 +1,26 @@
+
+<div class="item">
+    <div class="item-top">
+      <div class="logo"><img [src]="pData.thumbnailUrl" alt=""></div>
+      <div class="center">
+        <h1>{{pData.appName}} <span>{{pData.version}}</span></h1>
+        <p>{{pData.OwnerLink}}</p>
+        <div class="rating">
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+          <fa-icon [icon]="faStar"></fa-icon>
+   
+              </div>
+        <h3>{{pData.appSize}}</h3>
+      </div>
+
+      <div class="right"><a [href]="pData.downloadPath">Get</a></div>
+    </div>
+
+    <div class="desc">
+      <p> {{pData.descriptions}}</p>
+    </div>
+
+  </div>

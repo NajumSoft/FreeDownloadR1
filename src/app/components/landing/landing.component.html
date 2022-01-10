@@ -1,6 +1,297 @@
-<p>landing works!</p>
-<div *ngFor="let i of data">   
-    <img [src]="i.thumbnailUrl" alt="">
-    <button  class="btn btn-primary m-2" (click)="download(i)">Download</button>
+
+
+
+
+<!-- 
+    <div class="side">
+      <div><i class="fas fa-search"></i></div>
+      <hr>
+      <div><i class="fas fa-home"></i></div>
+      <div><i class="fas fa-book-alt"></i></div>
+      <div><i class="fas fa-camera-retro"></i></div>
+      <div><i class="fas fa-trash-alt"></i></div>
+      <div><i class="fas fa-pencil"></i></div>
+      <div><i class="fas fa-star"></i></div>
+      <hr>
+     <div><i class="fas fa-sign-out-alt"></i></div>
+    </div> -->
+
+
+    <swiper
+    [effect]="'coverflow'"
+    [grabCursor]="true"
+    [centeredSlides]="false"
+    [slidesPerView]="'auto'"
+    [coverflowEffect]="{
+      rotate: 30,
+      stretch: 0,
+      depth: 0,
+      modifier: 1,
+      slideShadows: true
+    }"
+    [pagination]="false"
+    class="mySwiper"
+  >
+    <ng-template swiperSlide >
+      <img src="https://www.lifewire.com/thmb/vwr6AG-TckO-7YUUkJWRUxlAG9g=/fit-in/1076x1500/filters:no_upscale():max_bytes(150000):strip_icc()/TheWitcher3-WildHunt-5c0fc7754cedfd00012de2d4.jpg" (click)="hello()" />
+    </ng-template
+    ><ng-template swiperSlide>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBhxaRC8tTTNTsY4ZFMD6q4n-xZquledUjaiJZwGAPeMg1rOIu5SAJlTKVOBDvXimfdtg&usqp=CAU" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="https://i.pinimg.com/236x/0d/6b/6b/0d6b6baec4ebb8f3e631eea6577cf7de--prince-of-persia-pc-games.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="https://i.pinimg.com/474x/06/c9/29/06c929d4450e9b2510daa4c9e593c0f7.jpg" />
+    </ng-template>
+    <ng-template swiperSlide>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBgbrn_K6ziapFzm27B8bdzLbcp8CzFoUOlA&usqp=CAU" />
+      </ng-template
+    > <ng-template swiperSlide >
+      <img src="https://www.lifewire.com/thmb/vwr6AG-TckO-7YUUkJWRUxlAG9g=/fit-in/1076x1500/filters:no_upscale():max_bytes(150000):strip_icc()/TheWitcher3-WildHunt-5c0fc7754cedfd00012de2d4.jpg" (click)="hello()" />
+    </ng-template
+    ><ng-template swiperSlide>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBhxaRC8tTTNTsY4ZFMD6q4n-xZquledUjaiJZwGAPeMg1rOIu5SAJlTKVOBDvXimfdtg&usqp=CAU" />
+    </ng-template>
+
+
+  </swiper>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-md-4">
+        
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">FreeDownloads</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Games</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Softweres</a>
+              </li>
+            
+            
+            </ul>
+            <form class="d-flex nav-search">
+              <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+              <button class="search-btn" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
     
+      </nav>
+    
+      <!-- navbar end ---------- navbar end ----------------  navbar end --------------- navbar end -->
+
+
+
+
+      <!-- swiper end -->
+
+
+      <div class="container px-4">
+        <h1 class="text-center mt-5">Softwere</h1>
+
+        <div class="items-container px-5">
+            <div class="" *ngFor="let i of data">   
+              <app-app-view1 [pData]="i"></app-app-view1>
+       
+ 
+        </div>
+
+     
+
+  
+         
+
+
+
+      
+
+   
+
+     
+
+         
+        </div>
+
+      </div>
+
+      <div class="games-main mt-5 pt-2">
+        <div class="fireman">
+          <img src="./img/fireman.png" alt="">
+        </div>
+        <div class="fireman2">
+          <img src="./img/sniper.png" alt="">
+        </div>
+        <div class="container mt-5">
+          <h1 class="text-center my-5 text-dark">PC Games</h1>
+
+          <div class="container">
+            <div class="games"  >
+          
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+              <a href="#"  data-aos="zoom-in">
+                <img src="./img/3.jpg" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- books-----------------------books-----------------------books----------------------- -->
+
+      <div class="container mt-5">
+        
+        <h1 class="text-center my-5 text-black-50">e-Books</h1>
+      <div class="books px-5">
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b1.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b2.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b3.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b4.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b1.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b2.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b3.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b4.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b1.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b2.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b3.jpg" alt="">
+          </a>
+        </div>
+
+        <div class="books-itmes">
+          <a href="#">
+            <img src="./img/b4.jpg" alt="">
+          </a>
+        </div>
+
+        
+      </div>
+      </div>
+
+
+
+
+
+
+
+
+
+      <div data-aos="fade-zoom-in" data-aos-offset="200" data-aos-easing="ease-in-sine" data-aos-duration="600">
+
+
+
+
+
+
+
+
+<div class="container">
+    
+<div class="d-flex justify-content-center">
+
+   <div class="row">
+    <div class="col-md-4" *ngFor="let i of data">   
+        <img [src]="i.thumbnailUrl" alt="">
+        <button  class="btn btn-primary m-2" (click)="download(i)">Download</button>
+        
+    </div>
+   </div>
+
+</div>
 </div>
